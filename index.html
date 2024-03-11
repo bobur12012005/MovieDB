@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie DB</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap&subset=cyrillic-ext"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__search">
+            <form action="#">
+                <input type="text" placeholder="Поиск">
+            </form>
+        </div>
+        <div class="header__logo">
+            <img src="icons/Logotype.svg" alt="logo">
+        </div>
+    </header>
+    <main class="promo">
+        <div class="promo__menu">
+            <nav class="promo__menu-list">
+                <ul></ul>
+            </nav>
+        </div>
+        <div class="promo__content">
+            <div class="promo__bg">
+                <iframe src="https://www.youtube.com/embed/d96cjJhvlMA" allow="autoplay" class="video"></iframe>
+            </div>
+            <div class="promo__interactive">
+                <div>
+                    <div class="promo__interactive-title">ПРОСМОТРЕННЫЕ ФИЛЬМЫ</div>
+                    <ul class="promo__interactive-list"></ul>
+                </div>
+                <div>
+                    <form class="add">
+                        <div class="promo__interactive-title">ДОБАВИТЬ НОВЫЙ ФИЛЬМ</div>
+                        <span>Введите название фильма</span>
+                        <input class="adding__input" type="text" placeholder="Что уже посмотрено...?">
+                        <span>Сделать его любимым?</span>
+                        <input type="checkbox">
+                        <span class="yes">Да!</span>
+                        <button>Подтвердить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="promo__adv">
+            <div class="promo__adv-title">Реклама от спонсоров</div>
+            <img src="img/content_1.jpg" alt="some picture">
+            <img src="img/content_2.jpg" alt="some picture">
+            <img src="img/content_3.png" alt="some picture">
+        </div>
+    </main>
+
+    <div id="modal">
+        <div class="content">
+            <img src="">
+            <div class="movie_stats">
+                <h1 class="modal_title">fdghsjjghfj fgegezrdgzdf</h1>
+                <div class="movie_char">
+                    <span class="modal_genre">lorem</span>
+                    <span class="modal_plot">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto modi autem
+                        voluptatum, praesentium eos aliquid illum atque delectus ullam cum dolores, hic suscipit sequi
+                        voluptatem cumque non minus. Eius, ratione!
+                    </span>
+                    <div class="movie_ratings">
+                        <span class="imdb">imdb 9.0</span>
+                        <span class="knp">knp 9.0</span>
+                    </div>
+                </div>
+                <div class="btns">
+                    <button id="more"> Learn more ---> </button>
+                    <button id="delete"> Delete </button>
+                </div>
+            </div>
+            <div class="close_button"><img src="./icons/close.png"></div>
+        </div>
+    </div>
+
+    <script type="module" src="js/index.js"></script>
+</body>
+
+</html>
