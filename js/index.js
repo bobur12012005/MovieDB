@@ -1,6 +1,5 @@
 import { movies } from "./db.js";
 
-let advs = document.querySelectorAll('.promo__adv img')
 let modal = document.querySelector('#modal')
 let close_modal = document.querySelector('.close_button')
 let container = document.querySelector('.promo__interactive-list')
@@ -11,9 +10,9 @@ let m_plot = document.querySelector('.modal_plot')
 let m_imdb = document.querySelector('.imdb')
 let m_knp = document.querySelector('.knp')
 let m_img = document.querySelector('#modal img')
-// let m_more = document.querySelector('#more')
 let m_delete = document.querySelector('#delete')
 let menu_genres = document.querySelector('.promo__menu-list ul')
+let search = document.querySelector('.header__search input')
 
 let genres = ["All"]
 movies.forEach(movie => {
@@ -30,6 +29,12 @@ unique_genres.forEach(genre => {
             item.classList.remove('promo__menu-item_active')
         })
         li_genre.classList.add('promo__menu-item_active')
+
+        let filteredMovies = movies.filter(movie => {
+            return genre === "All" ? true : movie.Genre === genre
+        })
+
+        reload(filteredMovies, container)
     }
     menu_genres.append(li_genre)
     menu_genres.firstChild.classList.add('promo__menu-item_active')
@@ -82,3 +87,13 @@ function reload(arr, place) {
 }
 
 reload(movies, container)
+
+search.oninput = () => {
+    let searchValue = search.value.toLowerCase()
+
+    let filteredMovies = movies.filter(movie => {
+        return movie.Title.toLowerCase().includes(searchValue)
+    })
+
+    reload(filteredMovies, container)
+}
