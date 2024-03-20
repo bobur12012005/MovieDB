@@ -1,5 +1,4 @@
-import { movies } from "./db.js";
-console.log(movies);
+import { movies } from "./db.js"
 
 let modal = document.querySelector('#modal')
 let close_modal = document.querySelector('.close_button')
@@ -75,12 +74,12 @@ function reload(arr, place) {
             m_knp.innerHTML = "Metascore: " + item.Metascore
 
             m_delete.onclick = () => {
-                let itemIndex = arr.indexOf(item);
+                let itemIndex = arr.indexOf(item)
                 if (itemIndex !== -1) {
-                    arr.splice(itemIndex, 1);
+                    arr.splice(itemIndex, 1)
                 }
-                reload(arr, place);
-                console.log(arr);
+                reload(arr, place)
+                modal.style.display = 'none'
             }
 
             close_modal.onclick = () => {
